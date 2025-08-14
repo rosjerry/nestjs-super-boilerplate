@@ -5,7 +5,9 @@ import { UpdateHelloGqlCfInput } from './dto/update-hello-gql-cf.input';
 @Injectable()
 export class HelloGqlCfService {
   create(createHelloGqlCfInput: CreateHelloGqlCfInput) {
-    return 'This action adds a new helloGqlCf';
+    return {
+      exampleField: createHelloGqlCfInput.exampleField,
+    };
   }
 
   findAll() {
