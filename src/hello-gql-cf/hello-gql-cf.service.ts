@@ -28,10 +28,15 @@ export class HelloGqlCfService {
   }
 
   update(id: number, updateHelloGqlCfInput: UpdateHelloGqlCfInput) {
-    return `This action updates a #${id} helloGqlCf`;
+    return {
+      id: id,
+      exampleField: updateHelloGqlCfInput.exampleField,
+    };
   }
 
   remove(id: number) {
-    return `This action removes a #${id} helloGqlCf`;
+    return {
+      id: id,
+    };
   }
 }
