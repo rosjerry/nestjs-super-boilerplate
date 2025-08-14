@@ -9,11 +9,19 @@ export class HelloGqlCfService {
   }
 
   findAll() {
-    return `This action returns all helloGqlCf`;
+    return [
+      {
+        exampleField: 999,
+      },
+    ];
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} helloGqlCf`;
+    return [
+      {
+        exampleField: id,
+      },
+    ];
   }
 
   update(id: number, updateHelloGqlCfInput: UpdateHelloGqlCfInput) {
