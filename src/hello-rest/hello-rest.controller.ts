@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { HelloRestService } from './hello-rest.service';
 import { CreateHelloRestDto } from './dto/create-hello-rest.dto';
 import { UpdateHelloRestDto } from './dto/update-hello-rest.dto';
@@ -23,7 +31,10 @@ export class HelloRestController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateHelloRestDto: UpdateHelloRestDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateHelloRestDto: UpdateHelloRestDto,
+  ) {
     return this.helloRestService.update(+id, updateHelloRestDto);
   }
 

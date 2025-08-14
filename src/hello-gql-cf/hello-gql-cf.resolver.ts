@@ -9,7 +9,9 @@ export class HelloGqlCfResolver {
   constructor(private readonly helloGqlCfService: HelloGqlCfService) {}
 
   @Mutation(() => HelloGqlCf)
-  createHelloGqlCf(@Args('createHelloGqlCfInput') createHelloGqlCfInput: CreateHelloGqlCfInput) {
+  createHelloGqlCf(
+    @Args('createHelloGqlCfInput') createHelloGqlCfInput: CreateHelloGqlCfInput,
+  ) {
     return this.helloGqlCfService.create(createHelloGqlCfInput);
   }
 
@@ -24,8 +26,13 @@ export class HelloGqlCfResolver {
   }
 
   @Mutation(() => HelloGqlCf)
-  updateHelloGqlCf(@Args('updateHelloGqlCfInput') updateHelloGqlCfInput: UpdateHelloGqlCfInput) {
-    return this.helloGqlCfService.update(updateHelloGqlCfInput.id, updateHelloGqlCfInput);
+  updateHelloGqlCf(
+    @Args('updateHelloGqlCfInput') updateHelloGqlCfInput: UpdateHelloGqlCfInput,
+  ) {
+    return this.helloGqlCfService.update(
+      updateHelloGqlCfInput.id,
+      updateHelloGqlCfInput,
+    );
   }
 
   @Mutation(() => HelloGqlCf)
