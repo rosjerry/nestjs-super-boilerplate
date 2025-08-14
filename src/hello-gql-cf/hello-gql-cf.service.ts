@@ -11,17 +11,18 @@ export class HelloGqlCfService {
   findAll() {
     return [
       {
+        exampleField: 998,
+      },
+      {
         exampleField: 999,
       },
     ];
   }
 
   findOne(id: number) {
-    return [
-      {
-        exampleField: id,
-      },
-    ];
+    return {
+      exampleField: id,
+    };
   }
 
   update(id: number, updateHelloGqlCfInput: UpdateHelloGqlCfInput) {

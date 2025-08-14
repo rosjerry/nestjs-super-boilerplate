@@ -15,7 +15,7 @@ export class HelloGqlCfResolver {
     return this.helloGqlCfService.create(createHelloGqlCfInput);
   }
 
-  @Query(() => [HelloGqlCf], { name: 'helloGqlCf' })
+  @Query(() => [HelloGqlCf], { name: 'helloGqlCfs' })
   findAll() {
     return this.helloGqlCfService.findAll();
   }
