@@ -12,6 +12,7 @@ import { HelloGqlCfModule } from './hello-gql-cf/hello-gql-cf.module';
       driver: ApolloDriver,
       autoSchemaFile: true,
       playground: true,
+      sortSchema: true
     }),
     HelloRestModule,
     HelloGqlCfModule,
