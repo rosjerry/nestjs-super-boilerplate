@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { HelloRestModule } from './hello-rest/hello-rest.module';
 import { HelloGqlCfModule } from './hello-gql-cf/hello-gql-cf.module';
 import { HelloWsModule } from './hello-ws/hello-ws.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { HelloWsModule } from './hello-ws/hello-ws.module';
     HelloRestModule,
     HelloGqlCfModule,
     HelloWsModule,
+    DatabaseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
