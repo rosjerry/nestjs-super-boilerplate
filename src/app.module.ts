@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HelloRestModule } from './hello-rest/hello-rest.module';
 import { HelloGqlCfModule } from './hello-gql-cf/hello-gql-cf.module';
+import { HelloWsModule } from './hello-ws/hello-ws.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { HelloGqlCfModule } from './hello-gql-cf/hello-gql-cf.module';
     }),
     HelloRestModule,
     HelloGqlCfModule,
+    HelloWsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
