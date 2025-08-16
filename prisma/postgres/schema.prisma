@@ -1,0 +1,22 @@
+//: https://pris.ly/d/prisma-schema
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource postgresql {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
+}
+
+model User {
+  pk            Int      @id @default(autoincrement())
+  id            String   @unique @default(uuid()) @postgresql.Uuid
+  email         String   @unique
+  phoneNumber   String?  @unique @map("phone_number")
+  password_hash String?
+  created_at    DateTime @default(now()) @map("created_at")
+
+  @@unique([pk, id])
+  @@map("users")
+}
