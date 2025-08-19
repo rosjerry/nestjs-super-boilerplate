@@ -26,7 +26,9 @@
     "prisma:generate:postgres_client": "prisma generate --schema prisma/postgres/schema.prisma",
     "prisma:mongo:dbpush": "npx prisma db push --schema prisma/mongo/schema.prisma",
     "prisma:generate:mongo_client": "prisma generate --schema prisma/mongo/schema.prisma",
-    "prisma:generate:db_clients": "prisma generate --schema prisma/postgres/schema.prisma && prisma generate --schema prisma/mongo/schema.prisma"
+    "prisma:generate:db_clients": "prisma generate --schema prisma/postgres/schema.prisma && prisma generate --schema prisma/mongo/schema.prisma",
+    "prisma:studio:postgres": "npx prisma studio --schema prisma/postgres/schema.prisma --port 5554",
+    "prisma:studio:mongo": "npx prisma studio --schema prisma/mongo/schema.prisma --port 5555"
   },
   "dependencies": {
     "@apollo/server": "^4.12.2",
