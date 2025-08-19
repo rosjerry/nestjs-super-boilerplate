@@ -12,7 +12,7 @@ import { DatabaseModule } from './database/database.module';
       driver: ApolloDriver,
       autoSchemaFile: true,
       playground: true,
-      sortSchema: true
+      sortSchema: true,
     }),
     HelloRestModule,
     DatabaseModule,
