@@ -38,6 +38,7 @@
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/platform-socket.io": "^11.1.6",
     "@nestjs/websockets": "^11.1.6",
+    "@pothos/plugin-prisma": "^4.10.0",
     "@prisma/client": "^6.14.0",
     "graphql": "^16.11.0",
     "reflect-metadata": "^0.2.2",
