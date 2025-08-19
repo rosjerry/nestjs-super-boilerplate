@@ -4,8 +4,6 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HelloRestModule } from './hello-rest/hello-rest.module';
-import { HelloGqlCfModule } from './hello-gql-cf/hello-gql-cf.module';
-import { HelloWsModule } from './hello-ws/hello-ws.module';
 import { DatabaseModule } from './database/database.module';
 
 @Module({
@@ -17,8 +15,6 @@ import { DatabaseModule } from './database/database.module';
       sortSchema: true
     }),
     HelloRestModule,
-    HelloGqlCfModule,
-    HelloWsModule,
     DatabaseModule,
   ],
   controllers: [AppController],
