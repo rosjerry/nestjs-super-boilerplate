@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PostgresPrismaService } from '../database/postgres-prisma.service';
-import { Prisma } from '@prisma/postgres/client';
+import { Prisma, User as PrismaUser } from '@prisma/postgres/client';
 
 @Injectable()
 export class UserService {
   constructor(private readonly prisma: PostgresPrismaService) {}
 
-  async create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto): Promise<PrismaUser> {
     const data: Prisma.UserCreateInput = {
       email: createUserDto.email,
       first_name: createUserDto.first_name ?? null,
@@ -18,15 +18,15 @@ export class UserService {
     return this.prisma.user.create({ data });
   }
 
-  findAll() {
+  findAll(): Promise<PrismaUser[]> {
     return this.prisma.user.findMany();
   }
 
-  findOne(id: string) {
+  findOne(id: string): Promise<PrismaUser | null> {
     return this.prisma.user.findUnique({ where: { id } });
   }
 
-  update(id: string, updateUserDto: UpdateUserDto) {
+  update(id: string, updateUserDto: UpdateUserDto): Promise<PrismaUser> {
     const { email, first_name, last_name, pinned_post_id } = updateUserDto;
     const data: Prisma.UserUpdateInput = {};
 
@@ -38,7 +38,7 @@ export class UserService {
     return this.prisma.user.update({ where: { id }, data });
   }
 
-  remove(id: string) {
+  remove(id: string): Promise<PrismaUser> {
     return this.prisma.user.delete({ where: { id } });
   }
 }
