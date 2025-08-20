@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HelloRestModule } from './hello-rest/hello-rest.module';
 import { DatabaseModule } from './database/database.module';
+import { GqlCfModule } from './gql-cf/gql-cf.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { DatabaseModule } from './database/database.module';
     }),
     HelloRestModule,
     DatabaseModule,
+    GqlCfModule,
   ],
   controllers: [AppController],
   providers: [AppService],
