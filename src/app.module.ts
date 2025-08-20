@@ -5,6 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HelloRestModule } from './hello-rest/hello-rest.module';
 import { DatabaseModule } from './database/database.module';
+import { UserModule } from './user/user.module';
+import { PostModule } from './post/post.module';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
@@ -15,6 +17,8 @@ import { DatabaseModule } from './database/database.module';
     }),
     HelloRestModule,
     DatabaseModule,
+    UserModule,
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],
