@@ -8,10 +8,11 @@ datasource mongodb {
   url      = env("MONGODB_URL")
 }
 
-model post {
-    id            String   @id @default(auto()) @map("_id") @mongodb.ObjectId
-    createdAt     DateTime @default(now())
-    text          String
-    author_id     String
-    @@map("post")
+model Post {
+  id        String   @id @default(auto()) @map("_id") @mongodb.ObjectId
+  createdAt DateTime @default(now())
+  text      String
+  author_id String
+
+  @@map("posts")
 }

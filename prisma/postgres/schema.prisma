@@ -10,13 +10,11 @@ datasource postgresql {
 }
 
 model User {
-  pk            Int      @id @default(autoincrement())
-  id            String   @unique @default(uuid()) @postgresql.Uuid
-  email         String   @unique
-  phoneNumber   String?  @unique @map("phone_number")
-  password_hash String?
-  created_at    DateTime @default(now()) @map("created_at")
+  id             String  @unique @default(uuid()) @postgresql.Uuid
+  email          String  @unique
+  first_name     String?
+  last_name      String?
+  pinned_post_id String  @unique
 
-  @@unique([pk, id])
   @@map("users")
 }
