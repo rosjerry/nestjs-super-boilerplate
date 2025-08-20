@@ -14,7 +14,7 @@ model User {
   email          String  @unique
   first_name     String?
   last_name      String?
-  pinned_post_id String  @unique
+  pinned_post_id String?  @unique 
 
   @@map("users")
 }
