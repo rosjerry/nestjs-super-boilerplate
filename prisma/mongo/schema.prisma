@@ -12,5 +12,6 @@ model post {
     id            String   @id @default(auto()) @map("_id") @mongodb.ObjectId
     createdAt     DateTime @default(now())
     text          String
-    @@map("images")
+    author_id     String
+    @@map("post")
 }
