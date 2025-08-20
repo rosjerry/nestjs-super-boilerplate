@@ -1,4 +1,9 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateUserDto } from './create-user.dto';
+import { Prisma } from '@prisma/postgres/client';
 
-export class UpdateUserDto extends PartialType(CreateUserDto) {}
+// Allow updating any user fields except `id`
+export type UpdateUserDto = Partial<
+  Pick<
+    Prisma.UserUpdateInput,
+    'email' | 'first_name' | 'last_name' | 'pinned_post_id'
+  >
+>;
