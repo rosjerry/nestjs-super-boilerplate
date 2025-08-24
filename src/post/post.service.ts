@@ -18,19 +18,31 @@ export class PostService {
     return this.mongo.post.create({ data });
   }
 
-  findAll() {
-    return `This action returns all post`;
+  async findAll(): Promise<MongoPost[]> {
+    return this.mongo.post.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} post`;
+  async findOne(id: string): Promise<MongoPost | null> {
+    return this.mongo.post.findUnique({
+      where: { id },
+    });
   }
 
-  update(id: number, updatePostInput: UpdatePostInput) {
-    return `This action updates a #${id} post`;
+  async update(id: string, updatePostInput: UpdatePostInput): Promise<MongoPost> {
+    const data: Prisma.PostUpdateInput = {
+      ...(updatePostInput.text && { text: updatePostInput.text }),
+      ...(updatePostInput.author_id && { author_id: updatePostInput.author_id }),
+    };
+
+    return this.mongo.post.update({
+      where: { id },
+      data,
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} post`;
+  async remove(id: string): Promise<MongoPost> {
+    return this.mongo.post.delete({
+      where: { id },
+    });
   }
 }
