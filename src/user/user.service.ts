@@ -11,8 +11,9 @@ export class UserService {
   async create(createUserDto: CreateUserDto): Promise<PrismaUser> {
     const data: Prisma.UserCreateInput = {
       email: createUserDto.email,
-      first_name: createUserDto.first_name ?? null,
-      last_name: createUserDto.last_name ?? null,
+      first_name: createUserDto.first_name,
+      last_name: createUserDto.last_name,
+      pinned_post_id: "1"
     };
 
     return this.prisma.user.create({ data });
