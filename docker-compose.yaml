@@ -24,10 +24,6 @@ services:
     command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
     ports:
       - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: nestjs_admin
-      MONGO_INITDB_ROOT_PASSWORD: nestjs_admin_password
-      MONGO_INITDB_DATABASE: nestjs_mongo_db
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
@@ -46,10 +42,6 @@ services:
     command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27018"]
     ports:
       - 27018:27018
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: nestjs_admin
-      MONGO_INITDB_ROOT_PASSWORD: nestjs_admin_password
-      MONGO_INITDB_DATABASE: nestjs_mongo_db
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
@@ -61,10 +53,6 @@ services:
     command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27019"]
     ports:
       - 27019:27019
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: nestjs_admin
-      MONGO_INITDB_ROOT_PASSWORD: nestjs_admin_password
-      MONGO_INITDB_DATABASE: nestjs_mongo_db
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
