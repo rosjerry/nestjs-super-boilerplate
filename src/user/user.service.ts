@@ -13,7 +13,7 @@ export class UserService {
       email: createUserDto.email,
       first_name: createUserDto.first_name,
       last_name: createUserDto.last_name,
-      pinned_post_id: "1"
+      pinned_post_id: '1',
     };
 
     return this.prisma.user.create({ data });
@@ -34,7 +34,8 @@ export class UserService {
     if (typeof email !== 'undefined') data.email = email;
     if (typeof first_name !== 'undefined') data.first_name = first_name;
     if (typeof last_name !== 'undefined') data.last_name = last_name;
-    if (typeof pinned_post_id !== 'undefined') data.pinned_post_id = pinned_post_id;
+    if (typeof pinned_post_id !== 'undefined')
+      data.pinned_post_id = pinned_post_id;
 
     return this.prisma.user.update({ where: { id }, data });
   }
